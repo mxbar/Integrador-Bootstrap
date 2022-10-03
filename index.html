@@ -34,36 +34,37 @@
         </div>
       </nav>
        
-      <div class="card text-bg-dark">
+      <div class="card text-bg-dark text-end">
         <img src="./static/imagenes/lugares/ba1.jpg" class="card-img" alt="...">
-        <div class=" card-img-overlay">
+        <div class="card-img-overlay align-content-end">
           <h5 class="card-title">Conf Bs As</h5>
           <p class="card-text">Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que estan creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
           <div class="row">
             <button href="#" type="button" class="btn btn-outline-light">Quiero ser orador</button>
             <button href="#" type="button" class="btn btn-success">Comprar tickets</button>
-
           </div>
         </div>
       </div>
-      <p>CONOCE A LOS</p>
-      <H3>ORADORES</H3>
-      <div class="row">
-      <div class="card col-sm" style="width: 18rem;">
+      <div class="row text-center">
+        <p>CONOCE A LOS</p>
+      <h3>ORADORES</h3>
+      <div class="card col-sm" style="width: 18rem; margin-left: 10%;">
         <img src="./static/imagenes/personas/steve.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-      </div><div class="card col-sm" style="width: 18rem;">
+      </div>
+      <div class="card col-sm" style="width: 18rem;">
         <img src="./static/imagenes/personas/bill.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-      </div><div class="card col-sm" style="width: 18rem;">
+      </div>
+      <div class="card col-sm" style="width: 18rem; margin-right: 10%;">
         <img src="./static/imagenes/personas/ada.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -75,7 +76,7 @@
       
       <div class="card mb-3">
         <div class="row g-0">
-          <div class="col-md-6 ">
+          <div class="col-md-6">
             <img src="./static/imagenes/lugares/honolulu.jpg" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-6">
@@ -88,21 +89,22 @@
         </div>
       </div>
 
-      <form class="row g-3">
-        <div class="col-md-6">
-          <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+      <form class="row g-3 text-center" style="padding-left: 25%; padding-right: 25%;">
+        <div class="col-md-6 ">
+          
+          <input class="form-control" type="text" placeholder="Nombre" aria-label="default input example">
         </div>
         <div class="col-md-6">
-          <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+          <input class="form-control" type="text" placeholder="Apellido" aria-label="default input example">
         </div>
         <div class="col-12">
           <div class="mb-5">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" type="text" placeholder="Sobre qué quieres hablar?" rows="3"></textarea>
+            <div id="emailHelp" class="form-text text-lg-start">Recuerda incluir un título para tu charla</div>
           </div>
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+        <div class="col-12 d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-outline-light" style="background-color: #96c93e;">Enviar</button>
         </div>
       </form>
 
@@ -113,60 +115,47 @@
        
         <section class="mt-5">
           
-          <div class=" d-flex justify-content-center pt-5" style="padding-left: 10%; padding-right: 10%;">
-            
+          <div class=" d-flex justify-content-center pt-5" style="padding-left: 10%; padding-right: 10%;">  
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Preguntas frecuentes</a>
               </p>
             </div>
-            
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Contáctanos</a>
               </p>
             </div>
-            
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Prensa</a>
               </p>
             </div>
-            
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Conferencias</a>
               </p>
             </div>
-            
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Términos y condiciones</a>
               </p>
             </div>
-
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Privacidad</a>
               </p>
             </div>
-
             <div class="col-md-2">
               <p class="font-weight-bold">
                 <a href="#!" class="text-white">Estudiantes</a>
               </p>
             </div>
-            
           </div>
         </section>
-        <hr class="my-5" />
-
+        <hr class="my-5"/>
       </div>
     </footer>
      <br/>
-    #353A40 color de navbar y segunda card
-    #8C94A1 color de letras grises
-    #96C93E color de boton enviar
-    #1D4E6C color de footer
 </body>
 </html>
