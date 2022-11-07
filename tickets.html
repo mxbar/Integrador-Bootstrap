@@ -63,39 +63,40 @@
   <h1 style="text-align: center; font-size: xx-large;">VALOR DE TICKET $200</h1>
   
   <!-- FORM -->
-  <form class="row g-3 " style="padding-left: 25%; padding-right: 25%;">
+  <form id="tickets" class="row g-3 " style="padding-left: 25%; padding-right: 25%;">
     <div class="col-md-6 ">
       
-      <input class="form-control" type="text" placeholder="Nombre" aria-label="Nombre">
+      <input class="form-control" type="text" placeholder="Nombre" aria-label="Nombre" >
     </div>
     <div class="col-md-6">
-      <input class="form-control" type="text" placeholder="Apellido" aria-label="Apellido">
+      <input class="form-control" type="text" placeholder="Apellido" aria-label="Apellido" >
     </div>
     <div class="col-12">
-        <input class="form-control" type="text" placeholder="Correo" aria-label="Correo">
+        <input class="form-control" type="text" placeholder="Correo" aria-label="Correo" >
     </div>
     <div class="col-md-6 ">
         <label class="form-label" style="text-align: left;">Cantidad</label>
-        <input class="form-control" type="text" placeholder="cantidad" aria-label="cantidad">
+        <input id="cantidad" class="form-control" type="number" placeholder="cantidad" aria-label="cantidad" required>
       </div>
       <div class="col-md-6">
-        <label for="Default select example" class="form-label">Categoria</label>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Seleccionar</option>
-            <option value="1">Estudiante</option>
-            <option value="2">Trainee</option>
-            <option value="3">Junior</option>
+        <label for="categoria" class="form-label">Categoria</label>
+        <select id="categoria" class="form-select" aria-label="categoria" required>
+            <option value="Estudiante">Estudiante</option>
+            <option value="Trainee">Trainee</option>
+            <option value="Junior">Junior</option>
           </select>
       </div>
-      <div class="alert alert-primary" role="alert">
-        Total a Pagar: $
+      <div class="col col-md-12 rounded" id="total" style="background-color: #CFE2FF;">
+        <p>Total a Pagar: $<span id="monto"></span></p>
       </div>      
-    <div class="col-6 d-grid gap-2" style="padding-bottom: 2%">
-      <button type="submit" class="btn btn-primary btn-outline-light" style="background-color: #96c93e;">Borrar</button>
+      <div class="d-flex justify-content-between">
+        <div class="flex-fill p-2 col-6">
+            <input type="reset" style="background-color: #96c93e;" class="form-control btn btn-success btn-outline-light" id="borrar" placeholder="Borrar" name="borrar">
+        </div>
+        <div class="flex-fill p-2 col-6">
+            <button type="button" style="background-color: #96c93e;" class="form-control btn btn-success btn-outline-light" id="resumen" name="resumen">Resumen</button>
+        </div>
     </div>
-    <div class="col-6 d-grid gap-2" style="padding-bottom: 2%">
-        <button type="submit" class="btn btn-primary btn-outline-light" style="background-color: #96c93e;">Resumen</button>
-      </div>
   </form>
 <!-- footer -->
 <footer class="text-center text-white" style="background-color: #1D4E6C">
@@ -145,5 +146,41 @@
       <hr class="my-3"/>
     </div>
   </footer>
+  <script >
+    let precioJunior 	= 0.85;
+let precioTrainee	= 0.50;
+let precioEstudiante	= 0.20;
+
+const cantidad 		= document.getElementById('cantidad');
+const botonResumen		= document.getElementById('resumen');
+const botonBorrar 	= document.getElementById('borrar')
+const categoria	= document.getElementById('categoria');
+
+cantidad.addEventListener("click", calcularPrecio);
+botonResumen.addEventListener("click", resumen);
+botonBorrar.addEventListener("click", reestablecer);
+
+function calcularPrecio(){
+
+	let precio = 0;
+
+	if (categoria.value == 'Junior') {
+		precio = (200 * precioJunior) * cantidad.value;
+	} else if (categoria.value == 'Trainee') {
+		precio = (200 * precioTrainee) * cantidad.value;
+	} else {
+		precio = (200 * precioEstudiante) * cantidad.value;
+	}
+
+	return precio;
+}
+
+function reestablecer(){
+	document.getElementById("monto").innerHTML = '0';
+}
+
+function resumen(){
+	document.getElementById("monto").innerHTML = calcularPrecio()}
+  </script>
 </body>
 </html>
